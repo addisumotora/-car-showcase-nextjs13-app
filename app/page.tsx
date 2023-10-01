@@ -1,3 +1,4 @@
+import CarCard from '@/components/CarCard'
 import CustomFilter from '@/components/CustomFilter'
 import Hero from '@/components/Hero'
 import SearchBar from '@/components/SearchBar'
@@ -25,7 +26,9 @@ export default async function Home() {
         </div>
         {!isDataEmpty ? (
           <section>
-
+            <div className='home_cars-wrapper'>
+              {allCars?.map((car) => <CarCard car={car}/>) }
+            </div>
           </section>
         ): (
           <div className='home__error-container'>
